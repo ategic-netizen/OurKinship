@@ -1,73 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OurKinship</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-zinc-900">
-  <header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4">
-      <a href="#home" class="flex items-center gap-2 font-semibold">
-        <img src="ourkinship-black.png" alt="OurKinship logo" class="h-9 w-auto" />
-        <span class="hidden sm:inline">OurKinship</span>
-      </a>
-      <div class="ms-auto flex flex-wrap gap-2 text-sm">
-        <a href="#loving-ourselves" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Loving</a>
-        <a href="#uplifting-ourselves" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Uplifting</a>
-        <a href="#education" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Education</a>
-        <a href="#money-wealth" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Money & Wealth</a>
-        <a href="#family" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Family</a>
-        <a href="#health" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Health</a>
-        <a href="#environment" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Environment</a>
-        <a href="#blacklifehacks" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">BlackLifeHacks</a>
-        <a href="#ourworldfamily" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">OurWorldFamily</a>
-        <a href="#donate" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Donate</a>
-        <a href="#purchase-book" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Book</a>
-        <a href="#shop" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Shop</a>
-        <a href="#contact" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Contact</a>
-      </div>
-    </nav>
-  </header>
+export default function OurKinshipOnePage() {
+  const NAV_ITEMS = [
+    ["Home", "#home"],
+    ["Loving ourselves", "#loving-ourselves"],
+    ["Uplifting ourselves", "#uplifting-ourselves"],
+    ["Education", "#education"],
+    ["Money & Wealth", "#money-wealth"],
+    ["Family", "#family"],
+    ["Health", "#health"],
+    ["Environment", "#environment"],
+    ["BlackLifeHacks", "#blacklifehacks"],
+    ["OurWorldFamily", "#ourworldfamily"],
+    ["Donate", "#donate"],
+    ["Purchase Book", "#purchase-book"],
+    ["Shop", "#shop-generic"],
+    ["Contact", "#contact"],
+  ];
 
-  <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-8">
-    <div class="rounded-3xl border bg-white/70 shadow ring-1 ring-black/5 p-8">
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Kinships are the roots of the African and African American Community.</h1>
-      <p class="mt-4 leading-7">Historically, our culture values family. Even those not blood related but close to us are called kin.</p>
+  const Logo = () => (
+    <img src="/ourkinship-black.png" alt="OurKinship logo" className="h-9 w-auto" />
+  );
+
+  return (
+    <div className="min-h-screen bg-white text-zinc-900">
+      {/* Decorative backdrop so long pages feel intentional */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-sky-50 via-white to-white" />
+
+      {/* Header / Nav */}
+      <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+        <nav className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4">
+          <a href="#home" className="flex items-center gap-2 font-semibold">
+            <Logo />
+            <span className="hidden sm:inline">OurKinship</span>
+          </a>
+          <div className="ms-auto flex flex-wrap gap-2 text-sm">
+            {NAV_ITEMS.map(([label, href]) => (
+              <a key={href} href={href} className="rounded-full border px-3 py-1.5 hover:bg-sky-50 hover:border-sky-200">{label}</a>
+            ))}
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="max-w-6xl mx-auto px-4 pt-10 pb-8">
+        <div className="rounded-3xl border bg-white/70 shadow-sm ring-1 ring-black/5">
+          <div className="grid md:grid-cols-[1.2fr,1fr] gap-6 p-6 md:p-8">
+            <div>
+              <p className="text-sky-600 font-semibold tracking-wide uppercase text-xs">Our Kinship</p>
+              <h1 className="mt-2 text-3xl md:text-5xl font-extrabold tracking-tight">
+                Kinships are the roots of the African and African American Community.
+              </h1>
+              <P>Historically, our culture values family. So much so, even those that are not blood related, but close to us, we may regard as “Kin”. We call each other cousin, brotha, bro, sista, sis, auntie, and “big momma” is everybody’s grandmother.</P>
+              <P>We must preserve our cultural heritage and ancestral traditions and pass this on to the next generations. But the strength in this solidarity must be more than titles. We must SEE each other as family, CALL each other family, and most importantly TREAT each other like family.</P>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <a href="#loving-ourselves" className="rounded-xl bg-sky-600 text-white px-4 py-2 font-semibold shadow hover:bg-sky-700">Start reading</a>
+                <a href="#donate" className="rounded-xl border px-4 py-2 font-semibold hover:bg-sky-50">Support the work</a>
+              </div>
+            </div>
+            <div className="rounded-2xl border bg-white p-4 shadow-sm">
+              <div className="text-sm font-semibold">A platform for information</div>
+              <div className="text-xs text-zinc-500 mb-3">to stimulate conversation and spark action</div>
+              <ul className="space-y-2 text-sm text-zinc-700">
+                <li>• Racial, economic & environmental justice</li>
+                <li>• Black empowerment & self‑sufficiency</li>
+                <li>• Unity through seeing, calling & treating each other as family</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main content */}
+      <main className="max-w-4xl mx-auto px-4 pb-20">
+        {/* Loving ourselves */}
+        <Section id="loving-ourselves" title="Loving ourselves">
+          <Sub>See ourselves</Sub>
+          <P>To see each other as family, we must stop looking at each other through the lens of white supremacy, oppression, and self-hatred.</P>
+          <P>We have allowed it to promote colorism and dictate beauty in our community, pit us against one another, and reinforce the myth that we do not support each other.</P>
+          <Sub>Save ourselves</Sub>
+          <P>Systematic oppression tore black families apart and strives to break down the black family structure through endorsing stereotypes and misconceptions.</P>
+          <P>Though no family is perfect, to save ourselves we must treat each other like family.</P>
+          <P>We can acknowledge the imperfection and any dysfunction in our community of kinship, and work in love toward doing and being better.</P>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. Besides seeing each other as our family, what other ways are there to create unity?</P>
+        </Section>
+
+        {/* Uplifting ourselves */}
+        <Section id="uplifting-ourselves" title="Uplifting ourselves">
+          <Sub>What is a family?</Sub>
+          <P>OurKinship adopts the ideals of a family unit because an exemplar family:</P>
+          <UL>
+            <LI>…loves each other</LI>
+            <LI>…says “I love you” and speaks to each other in kindness</LI>
+            <LI>…. shows love with outward signs of affection</LI>
+            <LI>…supports and takes care of each other with their money, time, and resources</LI>
+            <LI>…. uplifts each other and corrects each other with love, and not with disparaging words or insults</LI>
+            <LI>…. teaches and supports the education of its family members</LI>
+            <LI>…. desires to spend time with each other and breaks bread together</LI>
+            <LI>…. does not physically abuse each other or kill each other with weapons or with the poison of illicit drugs</LI>
+            <LI>…. forgives each other</LI>
+            <LI>…. are always there for each other, even when friends desert, family is there thick or thin</LI>
+            <LI>…. celebrates their likeness and are proud of the physical traits that authenticate “that they are kin to each other”</LI>
+            <LI>…. supports each other’s dreams, pursuits, businesses.</LI>
+          </UL>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. What would you add to our family list?</P>
+        </Section>
+
+        {/* Education */}
+        <Section id="education" title="Education">
+          <P>It is said that no one can take your education or what you have learned away from you. Having an education, whether formal or informal, brings a natural and lasting change in reasoning and ability to achieve goals. The language and vernacular we use with each other and having common goals creates stronger ties.</P>
+          <P>But, as black people, and especially in the peer groups of black children, we need to remove barriers within our community that disparagingly use terms like “acting white or talking white or being accused of deviating from our black identity when we strive for academic achievement or speak “standard English”.</P>
+          <P>For our children, education should be a priority. Yes, sports have been a means of wealth for a few of us. But, even with rich black entertainers and athletes, it has not increased the overall generational wealth in the black community, nor lifted the average income of the African American community.</P>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. How does education create unity? Is education the key for destroying the effects of white supremacy?</P>
+        </Section>
+
+        {/* Money & Wealth */}
+        <Section id="money-wealth" title="Money & Wealth">
+          <Sub>Money</Sub>
+          <P>One way to quickly boost the economy is to give black people money because they will spend it. And they will spend it all in white businesses. Are these true statements? It seems like it is. The generational wealth and income of black people have not increased over time. Black people must be intentional about increasing black wealth and how we spend our money.</P>
+          <Sub>Wealth</Sub>
+          <UL>
+            <LI>We need to save money, spend wisely or not spend at all</LI>
+            <LI>Spend our money in ways that improve the black economy</LI>
+            <LI>Decrease unemployment and help each other get jobs and keep jobs</LI>
+            <LI>Increase entrepreneurship</LI>
+          </UL>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. There are many ways to increase generational wealth. What are other areas involving money should we focus on?</P>
+        </Section>
+
+        {/* Family */}
+        <Section id="family" title="Family">
+          <Sub>Our Families</Sub>
+          <P>White supremacy tried to destroy the traditional black family. During slavery, families were torn apart. Post slavery, black fathers were stripped from their family through lynching … and now through mass incarceration. Instead of giving the deserved reparations that would have given blacks an economic start; the welfare system dismantled poor black families in need by requiring a father not be in the family.</P>
+          <P>Drug use made a significant number of our parents unfit and unable to raise us. The absence of strong intact families or strong role models to emulate, resulted in the cycle of teen pregnancy, single mothers, and young boys growing up not understanding their full potential as a man.</P>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. How do you define “family”? Are traditional families a thing of the past? How do we strengthen the black family structure?</P>
+        </Section>
+
+        {/* Health */}
+        <Section id="health" title="Health">
+          <P>African Americans have some of the worse health outcomes. In some cases, medical problems are less likely to occur, but when they do, the prognosis is worse.</P>
+          <P>African Americans must control our health by:</P>
+          <OL>
+            <LI>Taking care of our body</LI>
+            <LI>Taking care of our mind</LI>
+            <LI>Taking care of our environment</LI>
+          </OL>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. How can we ensure we are not victims of a health system that does not value black lives like everyone else’s?</P>
+        </Section>
+
+        {/* Environment */}
+        <Section id="environment" title="Environment">
+          <P>Black and brown communities are disproportionately impacted by environmental injustice. Pollution, lack of restoration or conservation, magnify oppression which contributes to the poor health and economic stagnation of their communities. Promoting and celebrating environmental awareness in our neighborhoods should be part of our narrative. Protecting and taking care of where we live improve health and wellbeing, peace of mind and happiness, –and security, and generational wealth.</P>
+          <P>We can take steps to lead the charge in our community by supporting</P>
+          <UL>
+            <LI>Environmentally conscious black business</LI>
+            <LI>Businesses that support black lives</LI>
+            <LI>Businesses that value the black dollar</LI>
+          </UL>
+          <P>We want to provide a platform for information, to stimulate conversation and to spark action. Do you think black people and people of color understand how their environment effects many aspects of their lives? How do we get black people to become more environmentally aware and active?</P>
+        </Section>
+
+        {/* BlackLifeHacks */}
+        <Section id="blacklifehacks" title="BlackLifeHacks">
+          <P>Through OurKinship, our contribution to the family is to provide a platform for information and to stimulate conversation; likewise spark action through BlacHaxs.com. BlacHaxs is our fusion of environmentalism and the culture and ingenuity of black people to uplift the environment and community, preserve resources, and build generational wealth.</P>
+          <P>Let’s get to work!</P>
+          <P>Visit <span className="underline">www.blachaxs.com</span></P>
+        </Section>
+
+        {/* OurWorldFamily */}
+        <Section id="ourworldfamily" title="OurWorldFamily">
+          <P>Not only does #UsGotUs …We GOT each other. OurKinship recognizes we are our priority. Why? Because racism exists in America and across the globe, and systematic racism is structured to oppress us and devalues our lives. Our very existence is threatened. We need to save ourselves from this and we need to heal. We will make this a better world for African Americans by #SavingOurselves and we invite all peoples to join us in making this a better world for every living being in our global community.</P>
+          <P>OurKinship is not us disengaging as a race from others. We recognize that race is a social construct and we are part of the global family. Our efforts to uplift the black community is not done in isolation. When black people and people of color rise and thrive, it is indubitable that all people will rise up too. We are all human and essentially, we are more alike than we are different.</P>
+          <P>Skin color, eye color, hair texture etc., are trivial differences, but has been used to justify putting humans in “racial” groups to support superiority. Our DNA is 99.9% the same and historically all of our ancestors are black. At the end of the day we include everyone as our family, regardless of skin color, religion, or abilities. Reconciliation and healing does not happen without moving forward together.</P>
+          <P>We ask all of you (every “race”), to move forward together with us and take care of those in need, especially the poor, children, the vulnerable…and even our environment and animals.</P>
+          <P>We, at OurKinship, want to provide a platform for information, to stimulate conversation and to spark action. Let’s get to work, together. Visit our action network at blachaxs.com</P>
+        </Section>
+
+        {/* Donate */}
+        <Section id="donate" title="Donate">
+          <P>Your support helps us keep building and sharing resources for our community.</P>
+          <div className="rounded-xl border p-4 bg-white/70">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <div style=\"overflow:auto;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:259px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-family:SQ Market, Helvetica, Arial,sans-serif;\"> 
+                <div style=\"padding:20px;\"> 
+                  <a target=\"_blank\" data-url=\"https://square.link/u/bEQ5Alff?src=embd\" href=\"https://square.link/u/bEQ5Alff?src=embed\" style=\"display:inline-block;font-size:18px;line-height:48px;height:48px;color:#ffffff;min-width:212px;background-color:#006aff;text-align:center;border-radius:6px;\">Donate</a> 
+                </div> 
+              </div>` }} />
+          </div>
+        </Section>
+
+        {/* Purchase Book */}
+        <Section id="purchase-book" title="Purchase — You Are More">
+          <div className="grid md:grid-cols-[1fr,1.6fr] gap-5 items-start">
+            <div className="rounded-xl border bg-white p-4 shadow-sm">
+              <img src="/book-cover-9.6.jpg" alt="You Are More book cover" className="w-full h-auto rounded-lg shadow" />
+              <div className="mt-3 text-sm text-zinc-700">Paperback & Kindle available on Amazon.</div>
+            </div>
+            <div>
+              <P><strong>You Are More</strong> is available now. Click below to buy on Amazon.</P>
+              <a href="https://a.co/d/bEULeli" target="_blank" rel="noopener nofollow" className="inline-block mt-3 rounded-xl bg-amber-500 text-white px-5 py-3 font-semibold shadow hover:bg-amber-600">Buy on Amazon</a>
+            </div>
+          </div>
+        </Section>
+
+        {/* Shop (Generic Item) */}
+        <Section id="shop-generic" title="Shop — Generic Item">
+          <P>Use this space to sell a single item or a rotating feature. When you have your Square product link, paste the embed below.</P>
+          <div className="rounded-xl border p-4 bg-white/70">
+            <div className="aspect-video w-full rounded-lg border bg-white flex items-center justify-center text-sm text-zinc-600">
+              <div className="text-center p-6">
+                <div className="font-semibold mb-2">Square Product Embed Placeholder</div>
+                <p>Add your Square buy button/embed when ready.</p>
+                <a href="#" className="inline-block mt-3 rounded-lg border px-4 py-2 font-semibold hover:bg-sky-50">Preview (no link yet)</a>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Contact */}
+        <Section id="contact" title="Contact Us">
+          <P>Have a question or want to collaborate? Send us a message.</P>
+          <form action="https://formspree.io/f/xvgbynaz" method="POST" className="grid gap-4 max-w-xl">
+            <div>
+              <label className="block text-sm font-medium">Your name</label>
+              <input name="name" type="text" required className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Your full name" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">Email</label>
+              <input name="email" type="email" required className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">Message</label>
+              <textarea name="message" rows={6} required className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Write your message here..." />
+            </div>
+            <button type="submit" className="rounded-xl bg-sky-600 text-white px-5 py-2.5 font-semibold hover:bg-sky-700">Send</button>
+            <p className="text-xs text-zinc-500">Powered by Formspree.</p>
+          </form>
+        </Section>
+
+        <div className="mt-12 flex justify-end">
+          <a href="#home" className="rounded-xl border px-4 py-2 text-sm font-semibold hover:bg-sky-50">Back to top ↑</a>
+        </div>
+      </main>
     </div>
-  </section>
+  );
+}
 
-  <main class="max-w-4xl mx-auto px-4 pb-20 space-y-14">
-    <section id="loving-ourselves"><h2 class="text-2xl font-bold mb-4">Loving ourselves</h2><p>...</p></section>
-    <section id="uplifting-ourselves"><h2 class="text-2xl font-bold mb-4">Uplifting ourselves</h2><p>...</p></section>
-    <section id="education"><h2 class="text-2xl font-bold mb-4">Education</h2><p>...</p></section>
-    <section id="money-wealth"><h2 class="text-2xl font-bold mb-4">Money & Wealth</h2><p>...</p></section>
-    <section id="family"><h2 class="text-2xl font-bold mb-4">Family</h2><p>...</p></section>
-    <section id="health"><h2 class="text-2xl font-bold mb-4">Health</h2><p>...</p></section>
-    <section id="environment"><h2 class="text-2xl font-bold mb-4">Environment</h2><p>...</p></section>
-    <section id="blacklifehacks"><h2 class="text-2xl font-bold mb-4">BlackLifeHacks</h2><p>...</p></section>
-    <section id="ourworldfamily"><h2 class="text-2xl font-bold mb-4">OurWorldFamily</h2><p>...</p></section>
-    <section id="donate"><h2 class="text-2xl font-bold mb-4">Donate</h2>
-      <div style="padding:20px;">
-        <a target="_blank" href="https://square.link/u/bEQ5Alff?src=embed" style="display:inline-block;font-size:18px;line-height:48px;height:48px;color:#fff;min-width:212px;background-color:#006aff;text-align:center;border-radius:6px;">Donate</a>
+function Section({ id, title, children }) {
+  return (
+    <section id={id} className="scroll-mt-28 mt-14">
+      <div className="rounded-3xl border bg-white/80 shadow-sm ring-1 ring-black/5">
+        <div className="px-5 py-4 border-b flex items-center gap-3">
+          <div className="h-2 w-2 rounded-full bg-sky-500" />
+          <h2 className="text-xl md:text-2xl font-bold tracking-tight">{title}</h2>
+        </div>
+        <div className="p-5 md:p-6 prose prose-zinc max-w-none">{children}</div>
       </div>
     </section>
-    <section id="purchase-book"><h2 class="text-2xl font-bold mb-4">Purchase — You Are More</h2>
-      <img src="book-cover-9.6.jpg" alt="You Are More book cover" class="w-full h-auto rounded-lg shadow" />
-      <a href="https://a.co/d/bEULeli" target="_blank" class="inline-block mt-3 rounded-xl bg-amber-500 text-white px-5 py-3 font-semibold shadow hover:bg-amber-600">Buy on Amazon</a>
-    </section>
-    <section id="shop"><h2 class="text-2xl font-bold mb-4">Shop</h2><p>Add your Square buy button here.</p></section>
-    <section id="contact"><h2 class="text-2xl font-bold mb-4">Contact</h2>
-      <form action="https://formspree.io/f/xvgbynaz" method="POST" class="grid gap-4 max-w-xl">
-        <input name="name" type="text" placeholder="Your full name" class="border px-3 py-2 rounded" required />
-        <input name="email" type="email" placeholder="you@example.com" class="border px-3 py-2 rounded" required />
-        <textarea name="message" rows="6" placeholder="Write your message here..." class="border px-3 py-2 rounded" required></textarea>
-        <button type="submit" class="bg-sky-600 text-white px-5 py-2 rounded font-semibold">Send</button>
-      </form>
-    </section>
-  </main>
+  );
+}
 
-  <footer class="border-t py-6 text-center text-sm text-zinc-500">© OurKinship</footer>
-</body>
-</html>
+const P = (props) => <p className="leading-7 text-zinc-800 mt-2 mb-4" {...props} />;
+const Sub = (props) => <h3 className="mt-4 text-lg font-semibold" {...props} />;
+const UL = (props) => <ul className="list-disc pl-6 space-y-1" {...props} />;
+const OL = (props) => <ol className="list-decimal pl-6 space-y-1" {...props} />;
+const LI = (props) => <li {...props} />;
