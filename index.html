@@ -9,6 +9,19 @@
   <style>
     html { scroll-behavior: smooth; }
     .section-card { box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.15); }
+    .content { line-height: 1.7; }
+    .content > * + * { margin-top: 1rem; }           /* Paragraph separation */
+    .content h3 { margin-top: 1.25rem; margin-bottom: .5rem; font-weight: 600; }
+    .chip { width: .5rem; height: .5rem; border-radius: 9999px; }
+    /* Dark section helpers */
+    .section-dark { background: #0a0a0a; color: #fff; }
+    .section-dark .content a { color: #7dd3fc; text-decoration: underline; }
+    .section-dark .badge { color: #cbd5e1; }
+    .divider { border-bottom: 1px solid rgba(0,0,0,.08); }
+    .divider-dark { border-bottom: 1px solid rgba(255,255,255,.12); }
+    .card-dark { border-color: rgba(255,255,255,.15); }
+    .btn-dark { background:#111827; color:white; }
+    .btn-dark:hover { background:#0b1220; }
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -16,7 +29,7 @@
   <div class="fixed inset-0 -z-10 bg-gradient-to-b from-sky-50 via-white to-white"></div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
+  <header class="sticky top-0 z-50 divider bg-white/90 backdrop-blur">
     <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4">
       <a href="#home" class="flex items-center gap-3 font-semibold">
         <img src="ourkinship-black.png" alt="OurKinship logo" class="h-9 w-auto" />
@@ -44,18 +57,18 @@
   <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-8">
     <div class="rounded-3xl border bg-gradient-to-br from-sky-100 via-white to-sky-50 section-card ring-1 ring-black/5 p-8">
       <div class="grid md:grid-cols-[1.2fr,1fr] gap-6">
-        <div>
-          <p class="text-sky-700 font-semibold tracking-wide uppercase text-xs">Our Kinship</p>
+        <div class="content">
+          <p class="text-sky-700 badge font-semibold tracking-wide uppercase text-xs">Our Kinship</p>
           <h1 class="mt-2 text-3xl md:text-5xl font-extrabold tracking-tight">
             Kinships are the roots of the African and African American Community.
           </h1>
-          <p class="mt-4 leading-7 text-slate-800">
+          <p>
             Historically, our culture values family. So much so, even those that are not blood related, but close to us, we may regard as “Kin”. We call each other cousin, brotha, bro, sista, sis, auntie, and “big momma” is everybody’s grandmother.
           </p>
-          <p class="mt-3 leading-7 text-slate-800">
+          <p>
             We must preserve our cultural heritage and ancestral traditions and pass this on to the next generations. But the strength in this solidarity must be more than titles. We must SEE each other as family, CALL each other family, and most importantly TREAT each other like family.
           </p>
-          <div class="mt-5 flex flex-wrap gap-3 text-sm">
+          <div class="mt-4 flex flex-wrap gap-3 text-sm">
             <a href="#loving-ourselves" class="rounded-xl bg-sky-600 text-white px-4 py-2 font-semibold shadow hover:bg-sky-700">Start reading</a>
             <a href="#donate" class="rounded-xl border px-4 py-2 font-semibold hover:bg-sky-50">Support the work</a>
           </div>
@@ -76,14 +89,14 @@
   <!-- MAIN CONTENT -->
   <main class="max-w-4xl mx-auto px-4 pb-20 space-y-14">
 
-    <!-- Loving ourselves -->
+    <!-- Loving ourselves (DARK) -->
     <section id="loving-ourselves" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-pink-50 to-rose-50">
-          <span class="h-2 w-2 rounded-full bg-rose-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-rose-900">Loving ourselves</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#f43f5e"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Loving ourselves</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <h3>See ourselves</h3>
           <p>To see each other as family, we must stop looking at each other through the lens of white supremacy, oppression, and self-hatred. We have allowed it to promote colorism and dictate beauty in our community, pit us against one another, and reinforce the myth that we do not support each other.</p>
           <h3>Save ourselves</h3>
@@ -93,17 +106,17 @@
       </div>
     </section>
 
-    <!-- Uplifting ourselves -->
+    <!-- Uplifting ourselves (LIGHT) -->
     <section id="uplifting-ourselves" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-amber-50 to-yellow-50">
-          <span class="h-2 w-2 rounded-full bg-amber-500"></span>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-amber-50 to-yellow-50">
+          <span class="chip" style="background:#f59e0b"></span>
           <h2 class="text-xl md:text-2xl font-bold tracking-tight text-amber-900">Uplifting ourselves</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <h3>What is a family?</h3>
           <p>OurKinship adopts the ideals of a family unit because an exemplar family:</p>
-          <ul>
+          <ul class="list-disc pl-6">
             <li>…loves each other</li>
             <li>…says “I love you” and speaks to each other in kindness</li>
             <li>…. shows love with outward signs of affection</li>
@@ -122,14 +135,14 @@
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education (DARK) -->
     <section id="education" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-sky-50 to-cyan-50">
-          <span class="h-2 w-2 rounded-full bg-sky-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-sky-900">Education</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#0ea5e9"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Education</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>It is said that no one can take your education or what you have learned away from you. Having an education, whether formal or informal, brings a natural and lasting change in reasoning and ability to achieve goals. The language and vernacular we use with each other and having common goals creates stronger ties.</p>
           <p>But, as black people, and especially in the peer groups of black children, we need to remove barriers within our community that disparagingly use terms like “acting white or talking white or being accused of deviating from our black identity when we strive for academic achievement or speak “standard English”.</p>
           <p>For our children, education should be a priority. Yes, sports have been a means of wealth for a few of us. But, even with rich black entertainers and athletes, it has not increased the overall generational wealth in the black community, nor lifted the average income of the African American community.</p>
@@ -138,18 +151,18 @@
       </div>
     </section>
 
-    <!-- Money & Wealth -->
+    <!-- Money & Wealth (LIGHT) -->
     <section id="money-wealth" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50">
-          <span class="h-2 w-2 rounded-full bg-green-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-green-900">Money & Wealth</h2>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50">
+          <span class="chip" style="background:#10b981"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-emerald-900">Money &amp; Wealth</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <h3>Money</h3>
           <p>One way to quickly boost the economy is to give black people money because they will spend it. And they will spend it all in white businesses. Are these true statements? It seems like it is. The generational wealth and income of black people have not increased over time. Black people must be intentional about increasing black wealth and how we spend our money.</p>
           <h3>Wealth</h3>
-          <ul>
+          <ul class="list-disc pl-6">
             <li>We need to save money, spend wisely or not spend at all</li>
             <li>Spend our money in ways that improve the black economy</li>
             <li>Decrease unemployment and help each other get jobs and keep jobs</li>
@@ -160,14 +173,14 @@
       </div>
     </section>
 
-    <!-- Family -->
+    <!-- Family (DARK) -->
     <section id="family" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-purple-50 to-fuchsia-50">
-          <span class="h-2 w-2 rounded-full bg-purple-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-purple-900">Family</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#8b5cf6"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Family</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <h3>Our Families</h3>
           <p>White supremacy tried to destroy the traditional black family. During slavery, families were torn apart. Post slavery, black fathers were stripped from their family through lynching … and now through mass incarceration. Instead of giving the deserved reparations that would have given blacks an economic start; the welfare system dismantled poor black families in need by requiring a father not be in the family.</p>
           <p>Drug use made a significant number of our parents unfit and unable to raise us. The absence of strong intact families or strong role models to emulate, resulted in the cycle of teen pregnancy, single mothers, and young boys growing up not understanding their full potential as a man.</p>
@@ -176,17 +189,17 @@
       </div>
     </section>
 
-    <!-- Health -->
+    <!-- Health (LIGHT) -->
     <section id="health" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-red-50 to-orange-50">
-          <span class="h-2 w-2 rounded-full bg-red-500"></span>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-red-50 to-orange-50">
+          <span class="chip" style="background:#ef4444"></span>
           <h2 class="text-xl md:text-2xl font-bold tracking-tight text-red-900">Health</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>African Americans have some of the worse health outcomes. In some cases, medical problems are less likely to occur, but when they do, the prognosis is worse.</p>
           <p>African Americans must control our health by:</p>
-          <ol>
+          <ol class="list-decimal pl-6">
             <li>Taking care of our body</li>
             <li>Taking care of our mind</li>
             <li>Taking care of our environment</li>
@@ -196,17 +209,17 @@
       </div>
     </section>
 
-    <!-- Environment -->
+    <!-- Environment (DARK) -->
     <section id="environment" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-lime-50 to-green-50">
-          <span class="h-2 w-2 rounded-full bg-lime-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-lime-900">Environment</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#84cc16"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Environment</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Black and brown communities are disproportionately impacted by environmental injustice. Pollution, lack of restoration or conservation, magnify oppression which contributes to the poor health and economic stagnation of their communities. Promoting and celebrating environmental awareness in our neighborhoods should be part of our narrative. Protecting and taking care of where we live improve health and wellbeing, peace of mind and happiness, –and security, and generational wealth.</p>
           <p>We can take steps to lead the charge in our community by supporting</p>
-          <ul>
+          <ul class="list-disc pl-6">
             <li>Environmentally conscious black business</li>
             <li>Businesses that support black lives</li>
             <li>Businesses that value the black dollar</li>
@@ -216,29 +229,29 @@
       </div>
     </section>
 
-    <!-- BlackLifeHacks -->
+    <!-- BlackLifeHacks (LIGHT) -->
     <section id="blacklifehacks" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-indigo-50 to-blue-50">
-          <span class="h-2 w-2 rounded-full bg-indigo-500"></span>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-indigo-50 to-blue-50">
+          <span class="chip" style="background:#6366f1"></span>
           <h2 class="text-xl md:text-2xl font-bold tracking-tight text-indigo-900">BlackLifeHacks</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Through OurKinship, our contribution to the family is to provide a platform for information and to stimulate conversation; likewise spark action through BlacHaxs.com. BlacHaxs is our fusion of environmentalism and the culture and ingenuity of black people to uplift the environment and community, preserve resources, and build generational wealth.</p>
           <p>Let’s get to work!</p>
-          <p>Visit <a href="http://www.blachaxs.com" class="underline">www.blachaxs.com</a></p>
+          <p>Visit <a href="http://www.blachaxs.com" class="underline text-sky-700">www.blachaxs.com</a></p>
         </div>
       </div>
     </section>
 
-    <!-- OurWorldFamily -->
+    <!-- OurWorldFamily (DARK) -->
     <section id="ourworldfamily" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-teal-50 to-cyan-50">
-          <span class="h-2 w-2 rounded-full bg-teal-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-teal-900">OurWorldFamily</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#14b8a6"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">OurWorldFamily</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Not only does #UsGotUs …We GOT each other. OurKinship recognizes we are our priority. Why? Because racism exists in America and across the globe, and systematic racism is structured to oppress us and devalues our lives. Our very existence is threatened. We need to save ourselves from this and we need to heal. We will make this a better world for African Americans by #SavingOurselves and we invite all peoples to join us in making this a better world for every living being in our global community.</p>
           <p>OurKinship is not us disengaging as a race from others. We recognize that race is a social construct and we are part of the global family. Our efforts to uplift the black community is not done in isolation. When black people and people of color rise and thrive, it is indubitable that all people will rise up too. We are all human and essentially, we are more alike than we are different.</p>
           <p>Skin color, eye color, hair texture etc., are trivial differences, but has been used to justify putting humans in “racial” groups to support superiority. Our DNA is 99.9% the same and historically all of our ancestors are black. At the end of the day we include everyone as our family, regardless of skin color, religion, or abilities. Reconciliation and healing does not happen without moving forward together.</p>
@@ -248,54 +261,53 @@
       </div>
     </section>
 
-    <!-- Donate -->
+    <!-- Donate (LIGHT) -->
     <section id="donate" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-yellow-50 to-orange-50">
-          <span class="h-2 w-2 rounded-full bg-yellow-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-yellow-900">Donate</h2>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-cyan-50 to-sky-50">
+          <span class="chip" style="background:#06b6d4"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-cyan-900">Donate</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Your support helps us keep building and sharing resources for our community.</p>
-          <div class="rounded-xl border p-4 bg-white/70">
-            <div style="overflow:auto;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:259px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-family:SQ Market, Helvetica, Arial,sans-serif;">
-              <div style="padding:20px;">
-                <a target="_blank" data-url="https://square.link/u/bEQ5Alff?src=embd" href="https://square.link/u/bEQ5Alff?src=embed" style="display:inline-block;font-size:18px;line-height:48px;height:48px;color:#ffffff;min-width:212px;background-color:#006aff;text-align:center;border-radius:6px;">Donate</a>
-              </div>
+          <div style="overflow:auto;display:flex;flex-direction:column;align-items:center;width:259px;background:#FFF;border:1px solid rgba(0,0,0,0.1);border-radius:10px;">
+            <div style="padding:20px;">
+              <a target="_blank" href="https://square.link/u/bEQ5Alff?src=embed" style="display:inline-block;font-size:18px;line-height:48px;height:48px;color:#fff;min-width:212px;background-color:#006aff;text-align:center;border-radius:6px;">Donate</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Purchase Book -->
+    <!-- Purchase Book (DARK) -->
     <section id="purchase-book" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-amber-50 to-yellow-50">
-          <span class="h-2 w-2 rounded-full bg-amber-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-amber-900">Purchase — You Are More</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#f59e0b"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Purchase — You Are More</h2>
         </div>
         <div class="p-5 md:p-6 grid md:grid-cols-[1fr,1.6fr] gap-5 items-start">
-          <div class="rounded-xl border bg-white p-4 shadow-sm">
+          <div class="rounded-xl border card-dark bg-black p-4 section-card">
             <img src="book-cover-9.6.jpg" alt="You Are More book cover" class="w-full h-auto rounded-lg shadow" />
-            <div class="mt-3 text-sm text-slate-700">Paperback & Kindle available on Amazon.</div>
+            <div class="mt-3 text-sm badge">Paperback &amp; Kindle available on Amazon.</div>
           </div>
-          <div>
+          <div class="content">
             <p><strong>You Are More</strong> is available now. Click below to buy on Amazon.</p>
             <a href="https://a.co/d/bEULeli" target="_blank" rel="noopener nofollow" class="inline-block mt-3 rounded-xl bg-amber-500 text-white px-5 py-3 font-semibold shadow hover:bg-amber-600">Buy on Amazon</a>
+            <p class="text-sm badge">Opens in a new tab.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Shop -->
+    <!-- Shop (LIGHT) -->
     <section id="shop" class="scroll-mt-28">
       <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-gray-50 to-slate-50">
-          <span class="h-2 w-2 rounded-full bg-gray-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900">Shop — Generic Item</h2>
+        <div class="px-5 py-4 divider flex items-center gap-3 bg-gradient-to-r from-violet-50 to-fuchsia-50">
+          <span class="chip" style="background:#7c3aed"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-violet-900">Shop — Generic Item</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Use this space to sell a single item or a rotating feature. When you have your Square product link, paste the embed below.</p>
           <div class="rounded-xl border p-4 bg-white/70">
             <div class="aspect-video w-full rounded-lg border bg-white flex items-center justify-center text-sm text-slate-600">
@@ -310,41 +322,41 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact (DARK) -->
     <section id="contact" class="scroll-mt-28">
-      <div class="rounded-3xl border bg-white section-card ring-1 ring-black/5">
-        <div class="px-5 py-4 border-b flex items-center gap-3 bg-gradient-to-r from-blue-50 to-sky-50">
-          <span class="h-2 w-2 rounded-full bg-blue-500"></span>
-          <h2 class="text-xl md:text-2xl font-bold tracking-tight text-blue-900">Contact Us</h2>
+      <div class="rounded-3xl border card-dark section-dark section-card ring-1 ring-white/10">
+        <div class="px-5 py-4 divider-dark flex items-center gap-3">
+          <span class="chip" style="background:#3b82f6"></span>
+          <h2 class="text-xl md:text-2xl font-bold tracking-tight">Contact Us</h2>
         </div>
-        <div class="p-5 md:p-6 prose max-w-none">
+        <div class="p-5 md:p-6 content">
           <p>Have a question or want to collaborate? Send us a message.</p>
           <form action="https://formspree.io/f/xvgbynaz" method="POST" class="grid gap-4 max-w-xl">
             <div>
-              <label class="block text-sm font-medium">Your name</label>
-              <input name="name" type="text" required class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Your full name" />
+              <label class="block text-sm font-medium badge">Your name</label>
+              <input name="name" type="text" required class="mt-1 w-full rounded-lg border border-white/20 bg-black px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Your full name" />
             </div>
             <div>
-              <label class="block text-sm font-medium">Email</label>
-              <input name="email" type="email" required class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="you@example.com" />
+              <label class="block text-sm font-medium badge">Email</label>
+              <input name="email" type="email" required class="mt-1 w-full rounded-lg border border-white/20 bg-black px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="you@example.com" />
             </div>
             <div>
-              <label class="block text-sm font-medium">Message</label>
-              <textarea name="message" rows="6" required class="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Write your message here..."></textarea>
+              <label class="block text-sm font-medium badge">Message</label>
+              <textarea name="message" rows="6" required class="mt-1 w-full rounded-lg border border-white/20 bg-black px-3 py-2 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Write your message here..."></textarea>
             </div>
-            <button type="submit" class="rounded-xl bg-sky-600 text-white px-5 py-2.5 font-semibold hover:bg-sky-700">Send</button>
-            <p class="text-xs text-slate-500">Powered by Formspree.</p>
+            <button type="submit" class="rounded-xl bg-sky-500 text-white px-5 py-2.5 font-semibold hover:bg-sky-600">Send</button>
+            <p class="text-xs badge">Powered by Formspree.</p>
           </form>
         </div>
       </div>
     </section>
 
     <div class="mt-12 flex justify-end">
-      <a href="#home" class="rounded-xl border px-4 py-2 text-sm font-semibold hover:bg-sky-50">Back to top ↑</a>
+      <a href="#home" class="rounded-xl border px-4 py-2 text-sm font-semibold hover:bg-sky-50 btn-dark">Back to top ↑</a>
     </div>
   </main>
 
-  <footer class="border-t py-6 text-center text-sm text-slate-500">
+  <footer class="divider py-6 text-center text-sm text-slate-500">
     © OurKinship — one-page rebuild
   </footer>
 </body>
