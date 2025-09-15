@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OurKinship</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div id="root"></div>
-  <script type="module">
-    import React from "https://esm.sh/react";
-    import ReactDOM from "https://esm.sh/react-dom";
-    import OurKinshipOnePage from "./OurKinshipOnePage.js";
+<body class="bg-white text-zinc-900">
+  <header class="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-4">
+      <a href="#home" class="flex items-center gap-2 font-semibold">
+        <img src="ourkinship-black.png" alt="OurKinship logo" class="h-9 w-auto" />
+        <span class="hidden sm:inline">OurKinship</span>
+      </a>
+      <div class="ms-auto flex flex-wrap gap-2 text-sm">
+        <a href="#loving-ourselves" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Loving</a>
+        <a href="#uplifting-ourselves" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Uplifting</a>
+        <a href="#education" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Education</a>
+        <a href="#money-wealth" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Money & Wealth</a>
+        <a href="#family" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Family</a>
+        <a href="#health" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Health</a>
+        <a href="#environment" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Environment</a>
+        <a href="#blacklifehacks" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">BlackLifeHacks</a>
+        <a href="#ourworldfamily" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">OurWorldFamily</a>
+        <a href="#donate" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Donate</a>
+        <a href="#purchase-book" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Book</a>
+        <a href="#shop" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Shop</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-full border hover:bg-sky-50">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-    ReactDOM.render(React.createElement(OurKinshipOnePage), document.getElementById("root"));
-  </script>
+  <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-8">
+    <div class="rounded-3xl border bg-white/70 shadow ring-1 ring-black/5 p-8">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Kinships are the roots of the African and African American Community.</h1>
+      <p class="mt-4 leading-7">Historically, our culture values family. Even those not blood related but close to us are called kin.</p>
+    </div>
+  </section>
+
+  <main class="max-w-4xl mx-auto px-4 pb-20 space-y-14">
+    <section id="loving-ourselves"><h2 class="text-2xl font-bold mb-4">Loving ourselves</h2><p>...</p></section>
+    <section id="uplifting-ourselves"><h2 class="text-2xl font-bold mb-4">Uplifting ourselves</h2><p>...</p></section>
+    <section id="education"><h2 class="text-2xl font-bold mb-4">Education</h2><p>...</p></section>
+    <section id="money-wealth"><h2 class="text-2xl font-bold mb-4">Money & Wealth</h2><p>...</p></section>
+    <section id="family"><h2 class="text-2xl font-bold mb-4">Family</h2><p>...</p></section>
+    <section id="health"><h2 class="text-2xl font-bold mb-4">Health</h2><p>...</p></section>
+    <section id="environment"><h2 class="text-2xl font-bold mb-4">Environment</h2><p>...</p></section>
+    <section id="blacklifehacks"><h2 class="text-2xl font-bold mb-4">BlackLifeHacks</h2><p>...</p></section>
+    <section id="ourworldfamily"><h2 class="text-2xl font-bold mb-4">OurWorldFamily</h2><p>...</p></section>
+    <section id="donate"><h2 class="text-2xl font-bold mb-4">Donate</h2>
+      <div style="padding:20px;">
+        <a target="_blank" href="https://square.link/u/bEQ5Alff?src=embed" style="display:inline-block;font-size:18px;line-height:48px;height:48px;color:#fff;min-width:212px;background-color:#006aff;text-align:center;border-radius:6px;">Donate</a>
+      </div>
+    </section>
+    <section id="purchase-book"><h2 class="text-2xl font-bold mb-4">Purchase — You Are More</h2>
+      <img src="book-cover-9.6.jpg" alt="You Are More book cover" class="w-full h-auto rounded-lg shadow" />
+      <a href="https://a.co/d/bEULeli" target="_blank" class="inline-block mt-3 rounded-xl bg-amber-500 text-white px-5 py-3 font-semibold shadow hover:bg-amber-600">Buy on Amazon</a>
+    </section>
+    <section id="shop"><h2 class="text-2xl font-bold mb-4">Shop</h2><p>Add your Square buy button here.</p></section>
+    <section id="contact"><h2 class="text-2xl font-bold mb-4">Contact</h2>
+      <form action="https://formspree.io/f/xvgbynaz" method="POST" class="grid gap-4 max-w-xl">
+        <input name="name" type="text" placeholder="Your full name" class="border px-3 py-2 rounded" required />
+        <input name="email" type="email" placeholder="you@example.com" class="border px-3 py-2 rounded" required />
+        <textarea name="message" rows="6" placeholder="Write your message here..." class="border px-3 py-2 rounded" required></textarea>
+        <button type="submit" class="bg-sky-600 text-white px-5 py-2 rounded font-semibold">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t py-6 text-center text-sm text-zinc-500">© OurKinship</footer>
 </body>
 </html>
